@@ -8,7 +8,7 @@ envs/curobo
 *.zip
 viewer_show.*
 eval_video/
-task_config/
+# Keep the official runtime task configurations versioned in this repository.
 **/.DS_Store
 
 # eval result

@@ -229,8 +229,9 @@ def run(TASK_ENV, args):
             TASK_ENV.remove_data_cache()
             assert TASK_ENV.check_success(), "Collect Error"
 
-        command = f"cd description && bash gen_episode_instructions.sh {args['task_name']} {args['task_config']} {args['language_num']}"
-        os.system(command)
+        if args.get("generate_instructions", True):
+            command = f"cd description && bash gen_episode_instructions.sh {args['task_name']} {args['task_config']} {args['language_num']}"
+            os.system(command)
 
 
 if __name__ == "__main__":
